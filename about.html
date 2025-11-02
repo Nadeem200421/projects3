@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Bookshop</title>
+  <meta name="description" content="About Bookshop — Learn more about our mission and story." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="\images\favicon.png" />
+</head>
+<body>
+  <div id="app" class="app-wrapper">
+
+    <!-- Header -->
+   <header>
+    <div class="logo">📚 BookNest</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="cart.html">🛒 Cart</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+    
+
+    <!-- MAIN CONTENT -->
+    <main id="main" class="site-main" role="main">
+      <section class="about-section" aria-labelledby="aboutHeading">
+        <div class="section-inner">
+          <h1 id="aboutHeading">About Bookshop</h1>
+          <p class="lead">A simple and elegant way to discover and enjoy your favorite books.</p>
+
+          <article class="about-content">
+            <h2>Our Mission</h2>
+            <p>
+              At <strong>Bookshop</strong>, we believe in the power of reading to inspire and connect people.
+              Our mission is to provide a thoughtfully curated collection of books — from timeless classics to modern masterpieces — that suit readers of all ages and interests.
+            </p>
+
+            <h2>What We Offer</h2>
+            <ul>
+              <li>A diverse selection of Fiction, Non-fiction, and Children’s literature.</li>
+              <li>Clean, responsive design with easy navigation.</li>
+              <li>Secure, transparent shopping experience (demo only).</li>
+              <li>Real-time search and filters to help you find what you love.</li>
+            </ul>
+
+            <h2>Why Choose Us</h2>
+            <p>
+              We combine simplicity with quality. Our minimal design keeps the focus on what matters — the books.
+              Whether you're exploring for yourself or finding the perfect gift, Bookshop makes it effortless and enjoyable.
+            </p>
+
+            <h2>Credits</h2>
+            <p>
+              This demo project is built with <em>vanilla HTML, CSS, and JavaScript</em> to showcase responsive web design and accessible e-commerce UI.
+              Product data and images are for sample use only.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>&copy; <span id="year"></span> Bookshop. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#terms">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script defer src="app.js"></script>
+</body>
+</html>

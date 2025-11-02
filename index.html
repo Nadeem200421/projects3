@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest — Home</title>
+  <meta name="description" content="BookNest — Discover and shop your next favorite book. Minimal e-commerce demo built with vanilla HTML, CSS, and JavaScript.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="\images\favicon.png" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">📚 BookNest</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">🛒 Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO / SEARCH SECTION ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Discover your next <span>favorite book</span></h1>
+      <p class="lead">A curated selection of fiction, non-fiction, and children's books.</p>
+
+      <!-- ===== SEARCH BOX ===== -->
+      <div class="search-bar">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search by title or author..." 
+          aria-label="Search books"
+        >
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <fieldset class="category-filter" aria-label="Filter by category">
+          <legend class="visually-hidden">Filter by category</legend>
+          <div id="categoryFilter" class="category-list">
+            <!-- JS populates categories dynamically -->
+          </div>
+        </fieldset>
+        <button id="clearFilters" class="btn">Clear Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS SECTION ===== -->
+  <main id="main" class="site-main" role="main">
+    <section class="product-section" aria-labelledby="productsHeading">
+      <div class="section-inner">
+        <h2 id="productsHeading" class="section-title">Books</h2>
+
+        <!-- Real-time search hint -->
+        <div id="searchHint" class="search-hint" aria-live="polite" role="status">
+          Showing all books
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="product-grid" aria-live="polite" aria-atomic="false">
+          <!-- Product cards injected by app.js -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state visually-hidden" role="status">
+          <p>No books found. Try clearing filters or search terms.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> BookNest. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#terms">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script defer src="app.js"></script>
+</body>
+</html>

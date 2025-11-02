@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📚 BookNest — Cart</title>
+  <meta name="description" content="Shopping cart page for BookNest e-commerce demo." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="\images\favicon.png" />
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="logo">📚 <a href="index.html">BookNest</a></div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html" class="active">🛒 Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main" class="site-main" role="main">
+    <section class="cart-section" aria-labelledby="cartHeading">
+      <div class="section-inner">
+        <h1 id="cartHeading">Your Cart</h1>
+        <p class="lead">Manage your selected books below.</p>
+
+        <!-- CART ITEMS -->
+        <div id="cartItems" class="cart-container"></div>
+
+        <!-- EMPTY CART -->
+        <div id="emptyCart" class="empty-state hidden" role="status">
+          <p>Your cart is empty. <a href="index.html">Browse books</a> to get started!</p>
+        </div>
+
+        <!-- CART SUMMARY -->
+        <aside id="cartSummary" class="cart-summary hidden">
+          <h2>Order Summary</h2>
+          <ul>
+            <li>Subtotal: <span id="subtotal">₹0</span></li>
+            <li>Tax (0%): <span id="tax">₹0</span></li>
+            <li class="grand-total">Grand Total: <span id="total">₹0</span></li>
+          </ul>
+
+          <div class="cart-buttons">
+            <button id="clearCart" class="btn btn-secondary">🗑️ Clear Cart</button>
+            <button id="checkoutBtn" class="btn btn-primary">💳 Proceed to Checkout</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> BookNest. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#terms">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
